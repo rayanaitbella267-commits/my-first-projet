@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Learners | Free Worksheets</title>
+<style>
+:root {
+  --ink: #24324a;
+  --purple: #7764d8;
+  --pink: #ffe3ec;
+  --yellow: #fff0bd;
+  --green: #d9f5e6;
+  --blue: #e0edff;
+  --paper: #fffdf9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+header {
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: white;
+  border-bottom: 1px solid #eee8e1;
+}
+.logo { font-size: 23px; font-weight: 900; }
+.logo span { color: var(--purple); }
+header a { color: var(--ink); text-decoration: none; }
+nav { display: flex; gap: 20px; font-size: 14px; }
+.hero {
+  padding: 65px 7% 55px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 30px;
+  background: linear-gradient(120deg, #fff0bd, #ffe6ef 60%, #e8e4ff);
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #6653c2;
+}
+h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.08;
+  margin: 16px 0;
+}
+.hero p {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 520px;
+}
+.button {
+  display: inline-block;
+  background: var(--purple);
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+.hero-art {
+  font-size: 100px;
+  text-align: center;
+  background: #ffffffa8;
+  border-radius: 35px;
+  padding: 30px 10px;
+  transform: rotate(2deg);
+}
+main { padding: 45px 7%; }
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+h2 { font-size: 30px; margin: 0 0 10px; }
+.muted { color: #727b8d; line-height: 1.6; }
+.search {
+  width: min(100%, 300px);
+  border: 1px solid #ddd8e7;
+  border-radius: 12px;
+  padding: 13px 15px;
+  font-size: 15px;
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0;
+}
+.category {
+  border: 1px solid #e7e1ed;
+  background: white;
+  color: var(--ink);
+  border-radius: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.category.active {
+  background: var(--purple);
+  color: white;
+  border-color: var(--purple);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  border: 1px solid #eee9e4;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px #30204c12;
+}
+.card-art {
+  min-height: 155px;
+  display: grid;
+  place-items: center;
+  font-size: 64px;
+}
+.card-body { padding: 20px; }
+.tag {
+  display: inline-block;
+  background: #f0edff;
+  color: #6653c2;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 900;
+}
+.card h3 { margin: 13px 0 8px; font-size: 20px; }
+.card p { color: #727b8d; line-height: 1.5; font-size: 14px; }
+.card button { width: 100%; margin-top: 8px; }
+.empty { padding: 30px 0; text-align: center; }
+.note {
+  margin-top: 45px;
+  padding: 28px;
+  border-radius: 22px;
+  background: var(--green);
+}
+.note h2 { font-size: 25px; }
+footer {
+  padding: 30px 7%;
+  text-align: center;
+  color: #727b8d;
+  background: white;
+  border-top: 1px solid #eee8e1;
+  font-size: 13px;
+}
+@media (max-width: 750px) {
+  .hero { grid-template-columns: 1fr; padding-top: 45px; }
+  .hero-art { font-size: 70px; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  nav { gap: 10px; }
+}
+@media (max-width: 480px) {
+  header { padding: 18px 5%; }
+  nav { font-size: 12px; }
+  main { padding: 35px 5%; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#">🌈 Little<span>Learners</span></a>
+  <nav>
+    <a href="#worksheets">Worksheets</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">Learn • Play • Grow</div>
+    <h1>Little steps.<br>Big discoveries!</h1>
+    <p>
+      Make learning fun with simple printable activities
+      for little learners. Explore letters, numbers,
+      coloring and more!
+    </p>
+    <a class="button" href="#worksheets">Explore Worksheets →</a>
+  </div>
+  <div class="hero-art" aria-label="Books, pencils and stars">
+    📚 ✏️ 🌟<br>🖍️ 🔤 🎨
+  </div>
+</section>
+
+<main id="worksheets">
+  <div class="section-heading">
+    <div>
+      <h2>Explore our worksheets</h2>
+      <p class="muted">Fun activities for curious minds.</p>
+    </div>
+    <input id="search" class="search"
+      type="search" placeholder="🔎 Search worksheets..."
+      aria-label="Search worksheets">
+  </div>
+
+  <div class="categories" id="categories">
+    <button class="category active" data-category="All">All</button>
+    <button class="category" data-category="Alphabet">🔤 Alphabet</button>
+    <button class="category" data-category="Math">🔢 Math</button>
+    <button class="category" data-category="Coloring">🎨 Coloring</button>
+    <button class="category" data-category="Seasonal">🎃 Seasonal</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div id="empty" class="empty muted" hidden>
+    No worksheets found. Try another search!
+  </div>
+
+  <section class="note" id="about">
+    <h2>💛 Learning should be fun!</h2>
+    <p>
+      Our activity collection is designed to make learning
+      enjoyable at home or in the classroom. Choose an activity,
+      print it, and start learning together.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © 2026 LittleLearners · Made for little curious minds ✨
+</footer>
+
+<script>
+const worksheets = [
+  {
+    title: "Trace the Letters",
+    category: "Alphabet",
+    emoji: "🔤",
+    color: "#e5e0ff",
+    description: "Practice writing the letters A, B and C.",
+    kind: "letters"
+  },
+  {
+    title: "Count the Stars",
+    category: "Math",
+    emoji: "⭐",
+    color: "#fff0bd",
+    description: "Count objects and practice numbers 1–10.",
+    kind: "count"
+  },
+  {
+    title: "Rainbow Coloring",
+    category: "Coloring",
+    emoji: "🌈",
+    color: "#ffe3ec",
+    description: "A fun rainbow activity to color at home.",
+    kind: "color"
+  },
+  {
+    title: "Number Practice",
+    category: "Math",
+    emoji: "🔢",
+    color: "#d9f5e6",
+    description: "Learn numbers and write them carefully.",
+    kind: "numbers"
+  },
+  {
+    title: "My First Words",
+    category: "Alphabet",
+    emoji: "🐻",
+    color: "#e0edff",
+    description: "Explore simple words and beginning letters.",
+    kind: "words"
+  },
+  {
+    title: "Halloween Fun",
+    category: "Seasonal",
+    emoji: "🎃",
+    color: "#ffe5d1",
+    description: "Enjoy a pumpkin-themed counting activity.",
+    kind: "halloween"
+  }
+];
+
+let selectedCategory = "All";
+const grid = document.getElementById("grid");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty");
+
+function render() {
+  const query = search.value.toLowerCase().trim();
+  const filtered = worksheets.filter(w =>
+    (selectedCategory === "All" ||
+      w.category === selectedCategory) &&
+    (w.title + " " + w.description + " " + w.category)
+      .toLowerCase().includes(query)
+  );
+
+  grid.innerHTML = filtered.map(w => `
+    <article class="card">
+      <div class="card-art" style="background:${w.color}">
+        ${w.emoji}
+      </div>
+      <div class="card-body">
+        <span class="tag">${w.category}</span>
+        <h3>${w.title}</h3>
+        <p>${w.description}</p>
+        <button class="button"
+          onclick="printWorksheet('${w.kind}')">
+          Open & Print ↗
+        </button>
+      </div>
+    </article>
+  `).join("");
+
+  empty.hidden = filtered.length !== 0;
+}
+
+document.querySelectorAll(".category").forEach(button => {
+  button.addEventListener("click", () => {
+    selectedCategory = button.dataset.category;
+    document.querySelectorAll(".category").forEach(b =>
+      b.classList.toggle("active", b === button)
+    );
+    render();
+  });
+});
+
+search.addEventListener("input", render);
+
+function printWorksheet(kind) {
+  const pages = {
+    letters: `
+      <h1>Trace the Letters</h1>
+      <p>Write each letter on the lines.</p>
+      <div class="exercise">A &nbsp; A &nbsp; A<br>________________</div>
+      <div class="exercise">B &nbsp; B &nbsp; B<br>________________</div>
+      <div class="exercise">C &nbsp; C &nbsp; C<br>________________</div>`,
+    count: `
+      <h1>Count the Stars</h1>
+      <p>Count the stars. Write the answer.</p>
+      <div class="exercise">⭐ ⭐ ⭐ &nbsp; Answer: ______</div>
+      <div class="exercise">⭐ ⭐ ⭐ ⭐ ⭐ &nbsp; Answer: ______</div>
+      <div class="exercise">⭐ ⭐ &nbsp; Answer: ______</div>`,
+    color: `
+      <h1>Rainbow Coloring</h1>
+      <p>Draw a rainbow and color it!</p>
+      <div class="rainbow">🌈</div>
+      <div class="exercise">My favorite color is: __________</div>`,
+    numbers: `
+      <h1>Number Practice</h1>
+      <p>Trace each number and write it yourself.</p>
+      <div class="exercise">1 &nbsp; 1 &nbsp; 1<br>________________</div>
+      <div class="exercise">2 &nbsp; 2 &nbsp; 2<br>________________</div>
+      <div class="exercise">3 &nbsp; 3 &nbsp; 3<br>________________</div>
+      <div class="exercise">4 &nbsp; 4 &nbsp; 4<br>________________</div>`,
+    words: `
+      <h1>My First Words</h1>
+      <p>Match each word to its beginning letter.</p>
+      <div class="exercise">🍎 Apple &nbsp; Letter: _____</div>
+      <div class="exercise">⚽ Ball &nbsp; Letter: _____</div>
+      <div class="exercise">🐱 Cat &nbsp; Letter: _____</div>
+      <p>Draw your favorite thing!</p>
+      <div class="drawing"></div>`,
+    halloween: `
+      <h1>Halloween Counting</h1>
+      <p>Count the pumpkins and write the number.</p>
+      <div class="exercise">🎃 🎃 &nbsp; Answer: ______</div>
+      <div class="exercise">🎃 🎃 🎃 🎃 &nbsp; Answer: ______</div>
+      <div class="exercise">🎃 🎃 🎃 &nbsp; Answer: ______</div>
+      <p>Draw your own Halloween pumpkin!</p>
+      <div class="drawing"></div>`
+  };
+
+  const content = pages[kind];
+  if (!content) return;
+
+  const win = window.open("", "_blank");
+  if (!win) {
+    alert("Please allow pop-ups to print this worksheet.");
+    return;
+  }
+
+  win.document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Printable Worksheet</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          color: #222;
+          padding: 25px;
+          max-width: 700px;
+          margin: auto;
+        }
+        h1 { text-align: center; }
+        .exercise {
+          font-size: 23px;
+          line-height: 2;
+          border-bottom: 1px solid #ddd;
+          padding: 15px 0;
+        }
+        .rainbow {
+          text-align: center;
+          font-size: 100px;
+          padding: 35px;
+          border: 2px dashed #888;
+        }
+        .drawing {
+          height: 150px;
+          border: 2px dashed #888;
+          margin-top: 15px;
+        }
+        button {
+          padding: 12px 20px;
+          cursor: pointer;
+          margin-bottom: 20px;
+        }
+        @media print {
+          button { display: none; }
+          body { padding: 0; }
+        }
+      </style>
+    </head>
+    <body>
+      <button onclick="window.print()">Print / Save as PDF</button>
+      ${content}
+      <p>Name: __________________ &nbsp; Date: __________</p>
+    </body>
+    </html>
+  `);
+  win.document.close();
+}
+
+render();
+</script>
+</body>
+</html>
